@@ -21,7 +21,7 @@
 
 ## 3. Demonstration 데모
 
-![메인](https://user-images.githubusercontent.com/50397936/117107399-75fe7780-adbc-11eb-80c6-090190b028d5.png){: width="850" height="478"}
+![메인](https://user-images.githubusercontent.com/50397936/117107399-75fe7780-adbc-11eb-80c6-090190b028d5.png)
 <br>
 <br>
-![게시판](https://user-images.githubusercontent.com/50397936/117107404-78f96800-adbc-11eb-8d54-862521f0784d.png){: width="850" height="478"}
+![게시판](https://user-images.githubusercontent.com/50397936/117107404-78f96800-adbc-11eb-8d54-862521f0784d.png)
