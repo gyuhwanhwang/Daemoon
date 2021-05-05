@@ -1,0 +1,215 @@
+
+
+  <style>
+    * {
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #FFF;
+    opacity: 0.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+::-ms-input-placeholder {
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+@keyframes bggradient {
+    0% {
+        background-position: 0%
+    }
+    100% {
+        background-position: 100%
+    }
+}
+
+.bgline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    background-color: #000000;
+    background-position: center;
+    box-sizing: border-box;
+    background-size: cover;
+}
+
+.header-logo {
+    width: 100%;
+    height: 100px;
+    float: left;
+    background-color: #000000;
+    margin: 30px 0 0;
+    background-position: center;
+    box-sizing: border-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.header-desc {
+    width: 100%;
+    height: 140px;
+    float: left;
+    margin: 10px 0 10px 0;
+    text-align: center;
+
+}
+
+.header-profile{
+  width: 140px;
+  height: 140px;
+  border-radius:50%;
+  text-align: center;
+
+  margin: 0 auto;
+}
+
+.login {
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.login-wrap {
+    background: #000000;
+    width: calc(100% - 140px);
+    padding: 70px;
+      overflow: hidden;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+}
+
+#signinbox {
+    display: inline-block;
+    float: left;
+    margin-bottom: 114px;
+}
+
+@media (max-height: 518px) {
+    #signinbox {
+        margin-bottom: calc((100vh - 404px));
+    }
+}
+
+#signupbox {
+    display: none;
+    float: left;
+}
+
+.inputfield {
+    height: 20px;
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 14px;
+    /*border-radius: 14px;
+    background: rgba(255, 255, 255, 0);*/
+    background: rgba(255, 255, 255, 0);
+    outline: none;
+    border: none;
+    border-bottom: white solid 1px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.inputsubmit {
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    background: #000000;
+  border: white solid 1px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.y-inputsubmit {
+    height: 40px;
+    width: 32%;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    background: #000000;
+  border: white solid 1px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+.fab .fa-facebook-square{
+  color: #3b5998;
+}
+
+.mid-submit{
+margin-right: 2%;
+margin-left: 2%;
+}
+
+.inputsubmit:active {
+    background: #fff;
+    color: #000;
+}
+.first-submit:active{
+  background: #fff;
+  color: #fff;
+}
+.mid-submit:active{
+  background: #fff;
+  color: #fff;
+}
+.third-submit:active{
+  background: #fff;
+  color: #fff;
+}
+  </style>
+
+
+  <div class="bgline"  style="background-image: url(/static/img/Main.png);"></div>
+<div class="login">
+    <div class="login-wrap">
+        <div class="header-logo" style="color:#fff; text-align:center; vertical-align: middle; font-size: 2.5rem; font-family: 'Lato', sans-serif;">
+          My Account
+        </div>
+        <div class="header-desc">
+          <div class="header-profile" type="image" style="background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-origin: border-box;
+  background-image:url(/static/img/img.png)"></div>
+        </div>
+        <div id="signinbox">
+            <form id="signinform" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                <input name="profile_image"  type="file"value="프로필 이미지"/>
+                <input name="name" type="text" class="inputfield" placeholder="Nick Name" value="{{ user.name }}" required/>
+                <input name="old_password" type="Password" class="inputfield" placeholder="Old Password" required/>
+                <input name="password1" type="Password" class="inputfield" placeholder="Password" required/>
+                <input name="password2" type="Password" class="inputfield" placeholder="Password Confirmation" required/>
+                
+                <button id="loginsubmit" type="submit" class="inputsubmit">Confirm</button>
+            </form>
+          
+        </div>
+    </div>
+</div>
